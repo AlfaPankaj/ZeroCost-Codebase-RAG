@@ -21,6 +21,15 @@ def extract_text(file_path: str) -> str:
     ext = Path(file_path).suffix.lower()
     if ext == ".pdf":
         return extract_text_from_pdf(file_path)
+    elif ext in [".docx", ".pptx", ".xlsx"]:
+        try:
+            from markitdown import MarkItDown
+            md = MarkItDown()
+            result = md.convert(file_path)
+            return result.text_content
+        except ImportError:
+            print("markitdown not found. To read Office files, please run: pip install markitdown")
+            return ""
     elif ext in [".txt", ".md", ".csv", ".py", ".json", ".java", ".js", ".ts", ".jsx", ".tsx", ".sql", ".css", ".yml", ".yaml"] or os.path.basename(file_path).lower() == "dockerfile":
         try:
             with open(file_path, "r", encoding="utf-8", errors="replace") as f:
@@ -71,7 +80,8 @@ def load_directory(dir_path: str) -> list[dict]:
     
     supported_extensions = {
         ".pdf", ".txt", ".md", ".csv", ".py", ".json", 
-        ".java", ".js", ".ts", ".jsx", ".tsx", ".sql", ".css", ".yml", ".yaml"
+        ".java", ".js", ".ts", ".jsx", ".tsx", ".sql", ".css", ".yml", ".yaml",
+        ".docx", ".pptx", ".xlsx"
     }
     
     ignore_dirs = {

@@ -2,9 +2,10 @@
 
 A highly advanced, standalone Retrieval-Augmented Generation (RAG) engine designed for **deep document understanding** and **massive polyglot codebases**. 
 
-I got tired of RAG systems crashing on 200-file codebases and running out of Context limits. So I built a 100% Local RAG engine with a Concurrent Map-Reduce Synthesizer, Dynamic Hardware Profiling, and Delta-Update Caching. It runs on a **3B model but reads code like a 70B model**. **Zero API costs**.
-
 **The Pitch:** Imagine having a brilliant, tireless assistant who instantly reads and memorizes every single file, document, and line of code in your entire company. Instead of spending days searching through massive folders to figure out how something works, you can simply ask a question in plain English and get an instant, perfectly accurate answer. That is the power of this Engine—a completely private, zero-cost artificial intelligence that securely runs directly on your laptop, learning your business inside and out without ever sending your data to the cloud.
+
+* **The Polyglot Parser:** Seamlessly reads `.py`, `.js`, `.ts`, `.java`, `.pdf`, `.md`, `.json`, `.sql`, and more.
+* **Microsoft Office Support:** Automatically converts `.docx`, `.pptx`, and `.xlsx` into clean markdown using Microsoft's open-source `MarkItDown` AI parser.
 
 ---
 

@@ -47,7 +47,7 @@ class SessionRAGAgent:
         if os.path.isdir(target_path):
             print(f"Loading directory: {target_path}...")
             
-            supported_exts = {".pdf", ".txt", ".md", ".csv", ".py", ".json", ".java", ".js", ".ts", ".jsx", ".tsx", ".sql", ".css", ".yml", ".yaml"}
+            supported_exts = {".pdf", ".txt", ".md", ".csv", ".py", ".json", ".java", ".js", ".ts", ".jsx", ".tsx", ".sql", ".css", ".yml", ".yaml", ".docx", ".pptx", ".xlsx"}
             ignore_dirs = {"venv", ".env", "node_modules", ".git", "__pycache__", "dist", "build", "target"}
             
             files_to_process = []
